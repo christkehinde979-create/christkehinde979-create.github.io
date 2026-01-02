@@ -7,47 +7,78 @@
 
   <style>
     :root {
-      --primary: #2c3e50;      /* deep blue */
-      --secondary: #d4af37;    /* gold */
+      --primary: #2c3e50;
+      --secondary: #d4af37;
       --light: #f9fafb;
       --gray: #eef2f7;
       --dark: #111827;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: "Segoe UI", Tahoma, sans-serif;
       background: var(--light);
       color: var(--dark);
       line-height: 1.7;
     }
 
-    a { text-decoration: none; }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-    /* ---------- UTILITIES ---------- */
+    a {
+      text-decoration: none;
+    }
+
     .container {
       width: 90%;
       max-width: 1200px;
       margin: auto;
     }
 
-    .section { padding: 5rem 0; }
-    .section.gray { background: var(--gray); }
+    .section {
+      padding: 4rem 0;
+    }
 
-    h1, h2, h3 { color: var(--primary); margin-bottom: 1rem; }
-    p { margin-bottom: 1.2rem; }
+    .section.gray {
+      background: var(--gray);
+    }
+
+    h1, h2, h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
 
     .btn {
       display: inline-block;
       background: var(--secondary);
       color: var(--primary);
-      padding: 0.9rem 2.2rem;
+      padding: 0.8rem 2rem;
       border-radius: 30px;
       font-weight: bold;
+      transition: 0.3s ease;
     }
 
-    /* ---------- HEADER ---------- */
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    /* HEADER */
     header {
       background: var(--primary);
       position: sticky;
@@ -60,25 +91,33 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 0;
+      flex-wrap: wrap;
     }
 
     .logo {
       color: #fff;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: #fff;
-      margin-left: 1.3rem;
+      margin-left: 1.2rem;
       font-weight: 500;
     }
 
-    nav a:hover { color: var(--secondary); }
+    nav a:hover {
+      color: var(--secondary);
+    }
 
-    /* ---------- HERO ---------- */
+    /* HERO */
     .hero {
-      height: 95vh;
+      min-height: 90vh;
       background: linear-gradient(rgba(44,62,80,.75), rgba(44,62,80,.75)),
                   url('church.jpg') center/cover no-repeat;
       display: flex;
@@ -87,12 +126,23 @@
       color: #fff;
     }
 
-    .hero h1 { font-size: 3rem; color: #fff; }
-    .hero p { font-size: 1.2rem; margin: 1.5rem 0 2rem; }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #fff;
+    }
 
-    /* ---------- SERVICES ---------- */
-    .service-list li {
+    .hero p {
+      font-size: 1.1rem;
+      margin: 1.5rem 0 2rem;
+      color: #e5e7eb;
+    }
+
+    /* SERVICES */
+    .service-list {
       list-style: none;
+    }
+
+    .service-list li {
       background: #fff;
       padding: 1.3rem;
       margin-bottom: 1rem;
@@ -101,7 +151,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    /* ---------- SERMONS ---------- */
+    /* SERMONS */
     .sermon-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -116,19 +166,29 @@
       text-align: center;
     }
 
-    /* ---------- OFFERING ---------- */
+    /* OFFERING */
     .offering-box {
       margin-top: 4rem;
       background: linear-gradient(135deg, var(--primary), #1f2937);
       color: #fff;
-      padding: 3rem;
+      padding: 3rem 2rem;
       border-radius: 15px;
       text-align: center;
     }
 
-    .offering-box h3 { color: var(--secondary); }
+    .offering-box h3 {
+      color: var(--secondary);
+    }
 
-    /* ---------- CONTACT ---------- */
+    .offering-box p {
+      color: #e5e7eb;
+    }
+
+    /* CONTACT */
+    .contact-form {
+      max-width: 600px;
+    }
+
     .contact-form input,
     .contact-form textarea {
       width: 100%;
@@ -136,56 +196,103 @@
       margin-bottom: 1rem;
       border-radius: 8px;
       border: 1px solid #cbd5e1;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #0f172a;
+      color: #e5e7eb;
     }
 
     .footer-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      padding: 3rem 0;
+    }
 
-/* Tablet */
-@media (max-width: 900px) {
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    .footer h3 {
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
 
-/* Mobile */
-@media (max-width: 500px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.footer-bottom{
-  text-align: center;
-  background-color: rgba(19, 75, 132, 0.75);
-  padding: 10px 10px;
-  text-align: center;
-}
-.move{
-  margin-top: 10px;
-  color: blue;
-}
-li{
-  color: blue;
-}
-a{
-  color: blue;
-}p{
-  color: blue;
-}
-img{
-  width: 35px;
-}
-.offer{
-  color: white;
-}
+    .footer p,
+    .footer li,
+    .footer a {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
 
+    .footer ul {
+      list-style: none;
+    }
+
+    .footer a:hover {
+      color: var(--secondary);
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .socials img {
+      width: 28px;
+      filter: invert(1);
+    }
+
+    .footer-bottom {
+      background: #020617;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 0.8rem;
+      }
+
+      nav a {
+        margin: 0.3rem 0.8rem 0 0;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .section {
+        padding: 3rem 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
 
 <!-- HEADER -->
@@ -207,8 +314,10 @@ img{
 <section class="hero" id="home">
   <div class="container">
     <h1>Welcome to Shepherd Circle Ministries</h1>
-    <p class="offer">A Bible-believing church raising disciples and transforming lives.</p>
-    <a href="https://www.youtube.com/@ShepherdCircleMinistries" target="_blank" class="btn">Watch Sermons</a>
+    <p>A Bible-believing church raising disciples and transforming lives.</p>
+    <a href="https://www.youtube.com/@ShepherdCircleMinistries" target="_blank" class="btn">
+      Watch Sermons
+    </a>
   </div>
 </section>
 
@@ -217,7 +326,7 @@ img{
   <div class="container">
     <h2>About the Church</h2>
     <p>
-      Shepherd Circle Ministries is committed to the teaching of sound doctrine,
+      Shepherd Circle Ministries is committed to sound doctrine,
       prayer, holiness, and spiritual growth in Christ Jesus.
     </p>
   </div>
@@ -235,7 +344,7 @@ img{
   </div>
 </section>
 
-<!-- SERMONS & OFFERING -->
+<!-- SERMONS -->
 <section id="sermons" class="section">
   <div class="container">
     <h2>Latest Sermons</h2>
@@ -243,22 +352,22 @@ img{
     <div class="sermon-grid">
       <div class="sermon-card">
         <h3>The Good Shepherd</h3>
-        <a href="https://www.youtube.com/@ShepherdCircleMinistries" target="_blank" class="btn">Watch</a>
+        <a class="btn" href="https://www.youtube.com/@ShepherdCircleMinistries" target="_blank">Watch</a>
       </div>
       <div class="sermon-card">
         <h3>Walking in Faith</h3>
-        <a href="https://www.youtube.com/@ShepherdCircleMinistries" target="_blank" class="btn">Watch</a>
+        <a class="btn" href="https://www.youtube.com/@ShepherdCircleMinistries" target="_blank">Watch</a>
       </div>
       <div class="sermon-card">
         <h3>Power of Prayer</h3>
-        <a href="https://www.youtube.com/@ShepherdCircleMinistries" target="_blank" class="btn">Watch</a>
+        <a class="btn" href="https://www.youtube.com/@ShepherdCircleMinistries" target="_blank">Watch</a>
       </div>
     </div>
 
     <div class="offering-box">
       <h3>Give Your Offering</h3>
-      <p class="offer">Support the work of God through Shepherd Circle Ministries.</p>
-      <a href="https://paystack.com/pay/shepherdcircle" target="_blank" class="btn">Give Offering</a>
+      <p>Support the work of God through Shepherd Circle Ministries.</p>
+      <a class="btn" href="https://paystack.com/pay/shepherdcircle" target="_blank">Give Offering</a>
     </div>
   </div>
 </section>
@@ -267,11 +376,11 @@ img{
 <section id="contact" class="section gray">
   <div class="container">
     <h2>Contact Us</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" />
-      <input type="email" placeholder="Your Email" />
-      <textarea placeholder="Your Message"></textarea>
-      <button class="btn">Send Message</button>
+    <form class="contact-form" action="#" method="post">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
     </form>
   </div>
 </section>
@@ -280,49 +389,44 @@ img{
 <footer class="footer">
   <div class="container footer-grid">
 
-    <div class="footer-col">
-      <h3>CONTACT</h3>
-      <p>Phone: +234 8168810809</p>
-      <p>Email: <a target="_blank" href="http://">shepherdsoladoye@gmail.com</a></p>
-      <p>Email: <a href="">shepherdcircleministries3in1@gmail.com</a></p>
-
-      <p>Headquarters:<br>13 Shepherd Way, Lagos, Nigeria</p>
+    <div>
+      <h3>Contact</h3>
+      <p>Phone: +234 816 881 0809</p>
+      <p>Email: <a href="mailto:shepherdsoladoye@gmail.com">shepherdsoladoye@gmail.com</a></p>
+      <p>Email: <a href="mailto:shepherdcircleministries3in1@gmail.com">shepherdcircleministries3in1@gmail.com</a></p>
+      <p>13 Shepherd Way, Lagos, Nigeria</p>
     </div>
 
-    <div class="footer-col">
-      <h3>NAVIGATIONS</h3>
+    <div>
+      <h3>Navigation</h3>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#sermons">Sermons</a></li>
       </ul>
     </div>
 
-      <div class="footer-col">
-        <h3>Service Times</h3>
-  <p>Monday – Friday: 10:00 AM – 3:00 PM</p>
-  <p>Sunday Worship: 10:00 AM – 1:00 PM</p>
+    <div>
+      <h3>Service Hours</h3>
+      <p>Mon–Fri: 10:00 AM – 3:00 PM</p>
+      <p>Sunday: 10:00 AM – 1:00 PM</p>
+    </div>
+
+    <div>
+      <h3>Socials</h3>
+      <div class="socials">
+        <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"></a>
+        <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"></a>
+        <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg"></a>
+        <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"></a>
       </div>
-
-
-   <div class="footer-col">
-<h3>SOCIALS</h3>
-<div class="socials">
-<a href="https://www.facebook.com/share/17bBK9RLmQ/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></a>
-<a href="#" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></a>
-<a href="#" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter"></a>
-<a href="#" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube"></a>
-</div>
-
-    
-      
     </div>
 
   </div>
 
   <div class="footer-bottom">
-    <p class="move">&copy; 2025 Shepherd Circle Ministries. All Rights Reserved.</p>
+    <p>&copy; 2025 Shepherd Circle Ministries. All Rights Reserved.</p>
   </div>
 </footer>
 
