@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Give Offering | Shepherd Circle Ministries</title>
+
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #d4af37;
+      --light: #f9fafb;
+      --dark: #111827;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .offering-card {
+      background: #fff;
+      color: var(--dark);
+      padding: 3rem 2.5rem;
+      border-radius: 18px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .offering-card h1 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .offering-card p {
+      margin-bottom: 1.5rem;
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: #e5e7eb;
+      margin: 1.5rem 0;
+    }
+
+    .bank-box {
+      background: #f1f5f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    .bank-box p {
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+    }
+
+    .bank-box span {
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 0.8rem 2.2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="offering-card">
+    <h1>Give Your Offering</h1>
+    <p>
+      Thank you for supporting the work of God through  
+      <strong>Shepherd Circle Ministries</strong>.
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="bank-box">
+      <p>🏦 <span>Bank:</span> Access Bank</p>
+      <p>👤 <span>Account Name:</span> Shepherd Circle Ministries</p>
+      <p>💳 <span>Account Number:</span> 0123456789</p>
+    </div>
+
+    <p class="note">
+      After making your transfer, may the Lord bless you abundantly 🙏
+    </p>
+
+    <a href="index.html" class="btn">← Back to Website</a>
+  </div>
+
+</body>
+</html>
