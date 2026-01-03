@@ -325,32 +325,12 @@
     <div class="offering-box">
       <h3>Give Your Offering</h3>
       <p>Support the work of God through Shepherd Circle Ministries.</p>
-      <button class="btn" onclick="openOffering()">Give Offering</button>
+      <button> <a href="offering.html" class="btn">Give Offering</a> </button>
     </div>
   </div>
 </section>
 
-<!-- OFFERING MODAL -->
-<div class="offering-modal" id="offeringModal">
-  <div class="offering-content">
-    <span class="close" onclick="closeOffering()">&times;</span>
-    <h3>Church Offering</h3>
 
-    <input type="number" id="amount" placeholder="Enter Amount (₦)">
-
-    <div class="bank-details">
-      <p><strong>Bank:</strong> opay</p>
-      <p><strong>Account Name:</strong> Shepherd Circle Ministries</p>
-      <p><strong>Account Number:</strong> 8147212896</p>
-    </div>
-
-    <button class="btn" onclick="confirmOffering()">I Have Paid</button>
-
-    <p class="success" id="successMsg">
-      Thank you! God bless you for your offering 🙏
-    </p>
-  </div>
-</div>
 
 <footer class="footer">
   <div class="container footer-grid">
@@ -370,28 +350,10 @@
   </div>
 </footer>
 
-<script>
-  function openOffering() {
-    document.getElementById("offeringModal").style.display = "flex";
-  }
 
-  function closeOffering() {
-    document.getElementById("offeringModal").style.display = "none";
-    document.getElementById("successMsg").style.display = "none";
-    document.getElementById("amount").value = "";
-  }
-
-  function confirmOffering() {
-    const amount = document.getElementById("amount").value;
-
-    if (amount === "" || amount <= 0) {
-      alert("Please enter a valid amount");
-      return;
-    }
-
-    document.getElementById("successMsg").style.display = "block";
-  }
-</script>
 
 </body>
 </html>
+
+
+
