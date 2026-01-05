@@ -9,7 +9,6 @@
     :root {
       --primary: #2c3e50;
       --secondary: #d4af37;
-      --light: #f9fafb;
       --dark: #111827;
     }
 
@@ -27,15 +26,18 @@
       justify-content: center;
       align-items: center;
       color: #fff;
+      padding: 2rem;
     }
 
+    /* ===== OFFERING CARD ===== */
     .offering-card {
-      background: #fff;
+      position: relative;
+      background: #ffffff;
       color: var(--dark);
-      padding: 3rem 2.5rem;
-      border-radius: 18px;
+      width: 100%;
       max-width: 420px;
-      width: 90%;
+      padding: 5rem 2.5rem 3rem;
+      border-radius: 18px;
       text-align: center;
       box-shadow: 0 20px 40px rgba(0,0,0,0.25);
       animation: fadeIn 0.6s ease;
@@ -52,34 +54,48 @@
       }
     }
 
+    /* ===== LOGO INSIDE CARD ===== */
+    .card-logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 65px;
+      background: #ffffff;
+      padding: 6px;
+      border-radius: 50%;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* ===== CONTENT ===== */
     .offering-card h1 {
+      font-size: 1.5rem;
+      line-height: 1.4;
       color: var(--primary);
-      margin-bottom: 0.5rem;
-      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
     }
 
     .offering-card p {
-      margin-bottom: 1.5rem;
-      color: #475569;
       font-size: 0.95rem;
+      color: #475569;
+      margin-bottom: 1.6rem;
     }
 
     .divider {
       height: 1px;
       background: #e5e7eb;
-      margin: 1.5rem 0;
+      margin: 2rem 0;
     }
 
     .bank-box {
       background: #f1f5f9;
-      padding: 1.5rem;
+      padding: 1.8rem;
       border-radius: 12px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .bank-box p {
-      margin-bottom: 0.6rem;
       font-size: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .bank-box span {
@@ -88,16 +104,16 @@
     }
 
     .note {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #64748b;
-      margin-bottom: 2rem;
+      margin-bottom: 2.2rem;
     }
 
     .btn {
       display: inline-block;
       background: var(--secondary);
       color: var(--primary);
-      padding: 0.8rem 2.2rem;
+      padding: 0.9rem 2.4rem;
       border-radius: 30px;
       font-weight: bold;
       text-decoration: none;
@@ -108,17 +124,37 @@
       opacity: 0.9;
       transform: translateY(-2px);
     }
+
+    /* ===== MOBILE FIX ===== */
+    @media (max-width: 480px) {
+      .offering-card {
+        padding: 5rem 1.8rem 2.5rem;
+      }
+
+      .card-logo {
+        width: 55px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  
-
   <div class="offering-card">
-    <h1>GIVE YOUR OFFERING,TITHES,FIRST FRUITS,OFFERING AND SEEDS</h1>
+
+    <!-- LOGO -->
+    <img
+      src="https://github.com/user-attachments/assets/547b8da8-5bdf-4b5e-bf01-12a8a40531d8"
+      alt="Shepherd Circle Ministries Logo"
+      class="card-logo">
+
+    <!-- CONTENT -->
+    <h1>
+      GIVE YOUR OFFERING, TITHES, FIRST FRUITS OFFERING AND SEEDS
+    </h1>
+
     <p>
-      Thank you for supporting the work of God through  
+      Thank you for supporting the work of God through
       <strong>Shepherd Circle Ministries</strong>.
     </p>
 
@@ -131,10 +167,11 @@
     </div>
 
     <p class="note">
-      After making your transfer, may the Lord bless you abundantly 🙏
+      May The Lord Bless You Abundantly In Jesus Name.
     </p>
 
     <a href="index.html" class="btn">← Back to Website</a>
+
   </div>
 
 </body>
